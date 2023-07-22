@@ -1,14 +1,6 @@
 import sys
 
-word = list(map(str, sys.stdin.readline().rstrip()))
-
-# 1. 소문자를 다 소문자로 바꾼다.
-for i, w in enumerate(word):
-    order_num = ord(w) - 97
-    if 97 <= ord(w) <= 122:
-        w = chr(order_num + 65)
-        word[i] = w
-
+word = list(map(str, sys.stdin.readline().rstrip().upper()))
 
 word_count = {}
 for w in word:
