@@ -1,11 +1,17 @@
 import sys
 
-N, B = map(int, sys.stdin.readline().split())
+n, b = map(int, sys.stdin.readline().split())
+rev_result = ''
 
-arr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-rev_base = ''
-while N > 0:
-    N, mod = divmod(N, B)
-    rev_base += str(arr[mod])
+while n != 0:
+    a = n % b
+    if a >= 10:
+        rev_result += chr(a + 55)
 
-print(rev_base[::-1])
+    elif a < 10:
+        rev_result += str(a)
+    
+    n //= b
+
+print(rev_result[::-1])
+
