@@ -5,10 +5,8 @@ T = int(sys.stdin.readline())
 for _ in range(T):
     C = int(sys.stdin.readline())
 
-
-    quarter = C // 25
-    dime = (C % 25) // 10
-    nickel = ((C % 25) % 10) // 5
-    penny = ((C % 25) % 10) % 5
-
-    print(quarter, dime, nickel, penny)
+    for i in [25, 10, 5, 1]:
+        print(C // i, end = ' ')
+        C = C % i
+        
+    print()
